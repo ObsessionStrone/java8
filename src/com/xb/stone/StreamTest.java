@@ -2,6 +2,7 @@ package com.xb.stone;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
@@ -55,6 +56,9 @@ public class StreamTest {
         //选代流
         //Stream<Integer> stream4 = Stream.iterate(0,(x)->x+2);
         //stream4.forEach(System.out::print);
+        Random random = new Random();
+        IntStream intStream = random.ints(0, 100);
+        intStream.limit(10).forEach(System.out::println);
 
         //生成
         Stream<Double> stream5 = Stream.generate(Math::random);
