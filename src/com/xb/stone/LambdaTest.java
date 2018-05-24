@@ -12,7 +12,7 @@ import java.util.Arrays;
  * @time 2018/5/23 13:37
  * @since JDK 1.8
  */
-public class T_1Lambda {
+public class LambdaTest {
 
     public static void main(String[] args) {
 
@@ -30,10 +30,11 @@ public class T_1Lambda {
         } );
 
         // Lambda表达式可以引用类成员和局部变量（会将这些变量隐式得转换成final的）,下面两种是一样的效果
-
+        //  int count = 0; //必须不可被后面的代码修改   // count++;
         String separator = ",";
         Arrays.asList( "a", "b", "d" ).forEach(
-                ( String e ) -> System.out.print( e + separator ) );
+                ( String e ) -> {System.out.print( e + separator );
+                } );
 
         final String separator1 = ",";
         Arrays.asList( "a", "b", "d" ).forEach(
