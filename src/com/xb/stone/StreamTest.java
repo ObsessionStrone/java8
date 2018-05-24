@@ -2,6 +2,7 @@ package com.xb.stone;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 /**
@@ -52,8 +53,8 @@ public class StreamTest {
 
         //4.第四种：创建无限流
         //选代流
-        Stream<Integer> stream4 = Stream.iterate(0,(x)->x+2);
-        stream4.forEach(System.out::print);
+        //Stream<Integer> stream4 = Stream.iterate(0,(x)->x+2);
+        //stream4.forEach(System.out::print);
 
         //生成
         Stream<Double> stream5 = Stream.generate(Math::random);
@@ -73,6 +74,9 @@ public class StreamTest {
                 })
                 .count();
         System.out.println("res count: "+count);
+
+        String res = IntStream.range(0, 100).summaryStatistics().toString();
+        System.out.println("statistics: "+res);
     }
 
     /**
